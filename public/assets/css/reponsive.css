@@ -1,0 +1,131 @@
+
+/* extra small devices(phones)*/
+@media (max-width:480px) {
+    .hero-title { font-size: 0.5rem; } 
+}
+
+/* small device(phones) */
+@media (max-width:600px) {
+    
+}
+
+/* medium device(tablets) */
+@media (max-width:768px) {
+
+    .hero-title { font-size: 1.0rem; }
+
+    .search-group{
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .input-wrapper{
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+        padding: 5px 5px;
+    }
+
+    .search-btn{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .browse{
+        height: auto;
+    }
+
+    .browse_container{
+        height: auto;
+        padding: 20px;
+    }
+
+    .footer-content-wrapper{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    .newsletter-form{
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px;
+    }
+    .newsletter-form input{
+        width: 100%;   
+        max-width: 300px;
+    }
+    .footer-right{
+        align-items: center;
+    }
+    .footer-links-wrapper{ 
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .footer-legal{
+        flex-direction: column; 
+        text-align: center;
+    }
+}
+
+
+/* large tablet/small laptops */
+@media (max-width:1024px) {
+
+    .hero-content .hero-title h1 { font-size: 0.5rem; }
+
+    .search-group{
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .hero-content{
+        width: 80%; 
+    }
+    .hero{
+        height: 60vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .popular{
+        height: 80vh;
+    }
+    .browse{
+        height: auto;
+    }
+
+    .browse_container{
+        height: auto;
+        padding: 20px;
+    }
+}
+
+/* laptops / desktops */
+@media (max-width:1200px) {
+
+    .hero-title { font-size: 0.5rem; }
+
+    .browse{
+        height: auto;
+    }
+
+    .browse_container{
+        height: auto;
+        padding: 20px;
+    }
+}
+
+
+/* large screens */
+@media (max-width:1440px) {
+    .browse{
+        height: auto;
+    }
+
+    .browse_container{
+        height: auto;
+        padding: 20px;
+    }
+}

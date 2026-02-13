@@ -1,0 +1,9 @@
+Options -MultiViews
+RewriteEngine On
+
+# If the user asks for a real file (like an image or css), let them have it.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise, send the request to index.php
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
