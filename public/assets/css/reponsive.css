@@ -1,3 +1,15 @@
+/* --- responsive tweaks for event hero --- */
+
+@media (max-width: 768px) {
+    .event-content h1{
+        font-size: 2rem;
+    }
+    .event-carousel-container {
+        height: 350px;
+    }
+}
+
+
 
 /* extra small devices(phones)*/
 @media (max-width:480px) {
