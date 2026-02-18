@@ -712,12 +712,40 @@ header .search a{
     border-bottom: #001f3f solid 2px;
 }
 
-.paid-content{
+.paid-content {
     padding: 20px;
-    border: #001f3f solid 3px;
-    overflow: hidden;
+    overflow-x: auto;
     display: flex;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
     /* background-color: #333; */
+}
+
+.paid-content::-webkit-scrollbar{
+    display: none;
+}
+
+.paid-btn {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0, 0.1);
+    background-color: transparent;
+    color: #333;
+    font-size: 18px;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}  
+.paid-btn:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+.right-paid-btn{
+    right: 10px;
 }
 
 .paid-card{
@@ -727,7 +755,6 @@ header .search a{
     height: auto;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0,0,0.2);
-    /* background-color: #ddd; */
     text-align: center;
     padding:25px;
     display: flex;
@@ -757,6 +784,12 @@ header .search a{
 .paid-card img{
     width: 150px;
     height: 100px;
+}
+.paid-wrapper{
+    position: relative;
+    width: 100%;
+
+    /* border: #001f3f solid 3px; */
 }
 
 
