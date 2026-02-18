@@ -699,13 +699,65 @@ header .search a{
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-    border: #2c56a0 solid 3px;
+    /* border: #2c56a0 solid 3px; */
 }
 
 .dot.active, .dot:hover{
     background-color: #ddd;
 }
 
+/* paid ticket */
+.paid-title{
+    padding: 10px 20px;
+    border-bottom: #001f3f solid 2px;
+}
+
+.paid-content{
+    padding: 20px;
+    border: #001f3f solid 3px;
+    overflow: hidden;
+    display: flex;
+    /* background-color: #333; */
+}
+
+.paid-card{
+    border: #001f3f solid 1px;
+    width: 150px;
+    min-width: 150px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0.2);
+    /* background-color: #ddd; */
+    text-align: center;
+    padding:25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.2rem;
+    margin: 30px ;
+    
+} 
+.paid-card span {
+    margin-top: 2px;
+    font-size: 10px;
+}
+
+.paid-card strong{
+    margin-top: 5px;
+    font-size: 15px;
+}
+.paid-card .search-btn{
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    
+}
+.paid-card img{
+    width: 150px;
+    height: 100px;
+}
 
 
 
