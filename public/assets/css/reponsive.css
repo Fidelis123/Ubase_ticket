@@ -1,15 +1,3 @@
-/* --- responsive tweaks for event hero --- */
-
-@media (max-width: 768px) {
-    .event-content h1{
-        font-size: 2rem;
-    }
-    .event-carousel-container {
-        height: 350px;
-    }
-}
-
-
 
 /* extra small devices(phones)*/
 @media (max-width:480px) {
@@ -58,6 +46,9 @@
         text-align: center;
         gap: 30px;
     }
+    .newsletter .btw-newsletter{
+        flex-direction: column;
+    }
     .newsletter-form{
         flex-direction: column; 
         align-items: center; 
@@ -78,6 +69,14 @@
     .footer-legal{
         flex-direction: column; 
         text-align: center;
+    }
+
+    /* --- responsive tweaks for event hero --- */
+    .event-content h1{
+        font-size: 2rem;
+    }
+    .event-carousel-container {
+        height: 350px;
     }
 }
 
