@@ -707,7 +707,7 @@ header .search a{
 }
 
 /* paid ticket */
-.paid-title{
+.paid-title, .free-title{
     padding: 10px 20px;
     border-bottom: #001f3f solid 2px;
 }
@@ -726,7 +726,7 @@ header .search a{
     display: none;
 }
 
-.paid-btn {
+.paid-btn{
     position: absolute;
     top: 50%;
     width: 40px;
@@ -748,7 +748,7 @@ header .search a{
     right: 10px;
 }
 
-.paid-card{
+.paid-card, .free-card{
     border: #001f3f solid 1px;
     width: 150px;
     min-width: 150px;
@@ -765,23 +765,23 @@ header .search a{
     margin: 30px ;
     
 } 
-.paid-card span {
+.paid-card span, .free-card span{
     margin-top: 2px;
     font-size: 10px;
 }
 
-.paid-card strong{
+.paid-card strong, .free-card strong{
     margin-top: 5px;
     font-size: 15px;
 }
-.paid-card .search-btn{
+.paid-card .search-btn, .free-card .search-btn{
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 14px;
     font-weight: 700;
     
 }
-.paid-card img{
+.paid-card img, .free-card img{
     width: 150px;
     height: 100px;
 }
@@ -790,6 +790,14 @@ header .search a{
     width: 100%;
 
     /* border: #001f3f solid 3px; */
+}.free-content {
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
