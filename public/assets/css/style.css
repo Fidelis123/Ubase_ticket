@@ -407,7 +407,7 @@ header .search a{
 }
 
 .footer-container{
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
 }
 
@@ -815,9 +815,33 @@ header .search a{
     margin-top: 20px;
 }
 
-@media (max-width:780px) {
-    
-    
+/* manage events */
+.create-explore {
+    margin-top: 5%;
+    padding: 10px 20px;
+    border-bottom: #8b5c solid 3px;
+}
+.cre-exp {
+    gap: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+.cre-exp a {    
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    gap: 10px;
+    border: #2c56a0 solid 3px;
+    color: black;
+    font-weight: bold;
+    border-radius: 15px;
+}
+.cre-exp img {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    /* align-items: center; */
 }
 
 
