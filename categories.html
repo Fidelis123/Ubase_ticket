@@ -10,16 +10,138 @@
 <body>
     <header class="logo flex" id="header"></header>
 
+<main id="manage-event" class="main-page active">
 
-    <section class="create-explore">
-        <div class="cre-exp">
-            <a href="create.html">Create<i><img src="./public/assets/image/icons/add.png" alt=""></i></a>
-            <a href="explore.html">Explore <i><img src="./public/assets/image/icons/arrow-right.png" alt=""></i></a>
-            <a href="">Ongoing event <i><img src="./public/assets/image/icons/ongoing.png" alt=""></i></a>
-            <a href="">upcoming event <i><img src="./public/assets/image/icons/upcoming.png" alt=""></i></a>
-            <a href="">past event <i><img src="./public/assets/image/icons/past.png" alt=""></i></a>
-        </div>    
-    </section>
+    <nav class="sub-nav">
+        <button class="sub-btn active" data-sub="sub-1">Create <i><img src="./public/assets/image/icons/add.png" alt=""></i></a></button>
+        <button class="sub-btn" data-sub="sub-2">Explore <i><img src="./public/assets/image/icons/arrow-right.png" alt=""></i></a></button>
+        <button class="sub-btn" data-sub="sub-3">Ongoing event <i><img src="./public/assets/image/icons/ongoing.png" alt=""></i></a></button>
+        <button class="sub-btn" data-sub="sub-4">Upcoming event <i><img src="./public/assets/image/icons/upcoming.png" alt=""></i></a></button>
+        <button class="sub-btn" data-sub="sub-5">Past event <i><img src="./public/assets/image/icons/past.png" alt=""></i></a></button>
+    </nav>
+
+    <div class="sub-content">
+
+
+        <div id="sub-1" class="sub-page active">
+
+            <div class="event-creation-wrapper">
+
+                <div class="step-container">
+
+                    <div class="step active">
+                        <div class="step-circle">1</div>
+                        <span>Basic Info</span>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-circle inactive">2</div>
+                        <span>Tickets</span>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-circle inactive">3</div>
+                        <span>Publish</span>
+                    </div>
+                </div>
+
+            
+
+                <div class="creation-grid">
+                
+                <div class="left-col">
+
+                    <div class="create-form-card">
+                        <h3>Event Details</h3>
+
+                        <div class="create-input-group">
+                            <label for="event-name">Event Name</label>
+                            <input type="text" id="event-name" placeholder="Enter event name">
+                        </div>
+
+                        <div class="create-form-row">
+                            <div class="create-input-group">
+                                <label for="event-date">Event Date</label>
+                                <input type="date" id="event-date">
+                            </div>
+
+                            <div class="create-input-group">
+                                <label for="event-time">Event Time</label>
+                                <input type="time" id="event-time">
+                            </div>
+                        </div>
+                        <div class="create-input-group">
+                            <label for="event-location">Event Location</label>
+                            <input type="text" id="event-location" placeholder="Enter event location">
+                        </div>
+                    </div>
+
+                    <div class="create-form-card">
+                        <h3>Event Banner</h3>
+                        <div class="upload-area">
+                            <div class="upload-icon">☁️</div>
+                            <h4>Drag and drop your banner here, or <span class="upload-link">browse</span></h4>
+                            <p>PNG, JPG, or WEBP (Max 10MB). Recommended 1200x600px</p>
+                            <input type="file" id="banner-upload" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="right-col">
+
+                    <div class="create-form-card ticket-card">
+                        <div class="card-header">
+                            <h3>Ticket Setup</h3>
+                            <button class="add-btn">+ Add Category</button>
+                        </div>
+
+                        <div class="ticket-box">
+                            <div class="ticket-top">
+                                <div>
+                                    <h4>General Admission</h4>
+                                    <p>Standard entry access</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="create-form-row">
+                                <div class="create-input-group">
+                                    <label for="ticket-price">PRICE</label>
+                                    <input type="text" id="ticket-price" value="$ 49">
+                                </div>
+                                <div class="create-input-group">
+                                    <label for="ticket-quantity">QUANTITY</label>
+                                    <input type="text" id="ticket-quantity" value="100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="revenue-summary">
+                            <span>Potential Revenue</span>
+                            <strong>$37,400.00</strong>
+                        </div>
+                        <button class="continue-btn">Continue to Tickets →</button>
+                        <p class="disclaimer">You can change these details later in settings.</p>
+                    </div>
+                </div>
+                    
+                </div>
+            </div>
+        </div>        
+            
+
+
+    </div>
+</main>
+   
+
 
 
 

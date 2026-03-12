@@ -78,6 +78,11 @@
     .event-carousel-container {
         height: 350px;
     }
+
+    /* creation responsive grid  */
+    .creation-grid{
+        grid-template-columns: 1fr;
+    }
 }
 
 

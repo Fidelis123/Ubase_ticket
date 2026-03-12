@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nested SPA Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- //loading  -->
+<div id="loader-overlay" class="loader-hidden">
+  <div class="spinner"></div>
+</div>
+<style>
+  /* Spinner Overlay Background */
+#loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Stay on top of everything */
+  transition: opacity 0.3s ease;
+}
+
+/* Class to hide the loader */
+.loader-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* The actual Spinning Circle */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #007bff; /* Main Nav Blue */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+<body>
+
+  <nav class="main-nav">
+    <button class="nav-btn active" data-target="home">Home</button>
+    <button class="nav-btn" data-target="about">About</button>
+    <button class="nav-btn" data-target="services">Services</button>
+    <button class="nav-btn" data-target="contact">Contact</button>
+  </nav>
+
+  <main class="content-container">
+    
+    <section id="home" class="main-page active">
+      <h1>Home Dashboard</h1>
+      
+      <nav class="sub-nav">
+        <button class="sub-btn active" data-sub="sub-1">Overview</button>
+        <button class="sub-btn" data-sub="sub-2">Profile</button>
+        <button class="sub-btn" data-sub="sub-3">Settings</button>
+        <button class="sub-btn" data-sub="sub-4">Analytics</button>
+        <button class="sub-btn" data-sub="sub-5">Messages</button>
+        <button class="sub-btn" data-sub="sub-6">Reports</button>
+      </nav>
+
+      <div class="sub-content">
+        <div id="sub-1" class="sub-page active"><h3>Overview Page</h3><p>Main stats here.</p></div>
+        <div id="sub-2" class="sub-page"><h3>Profile Page</h3><p>User info here.</p></div>
+        <div id="sub-3" class="sub-page"><h3>Settings Page</h3><p>Preferences here.</p></div>
+        <div id="sub-4" class="sub-page"><h3>Analytics Page</h3><p>Data charts here.</p></div>
+        <div id="sub-5" class="sub-page"><h3>Messages Page</h3><p>Inbox here.</p></div>
+        <div id="sub-6" class="sub-page"><h3>Reports Page</h3><p>Document list here.</p></div>
+      </div>
+    </section>
+
+    <section id="about" class="main-page"><h1>About Us</h1></section>
+    <section id="services" class="main-page"><h1>Our Services</h1></section>
+    <section id="contact" class="main-page"><h1>Contact Support</h1></section>
+
+  </main>
+  
+  <style>* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+/* Main Navigation */
+.main-nav { background: #1a1a1a; padding: 15px; display: flex; gap: 10px; }
+.nav-btn { padding: 10px 20px; cursor: pointer; border: none; background: #444; color: #fff; border-radius: 5px; }
+.nav-btn.active { background: #007bff; }
+
+/* Sub-Navigation (Nested) */
+.sub-nav { display: flex; gap: 8px; margin: 20px 0; border-bottom: 2px solid #eee; padding-bottom: 10px; flex-wrap: wrap; }
+.sub-btn { padding: 8px 15px; cursor: pointer; border: 1px solid #ccc; background: #f9f9f9; border-radius: 20px; font-size: 0.85rem; }
+.sub-btn.active { background: #28a745; color: white; border-color: #28a745; }
+
+/* Content Visibility Logic */
+.content-container { padding: 30px; }
+.main-page, .sub-page { display: none; animation: fadeIn 0.3s ease; }
+.main-page.active, .sub-page.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
+
+
+
+<!-- create section -->
+
+<style>
+/* Layout & Grid */
+.event-creation-wrapper {
+  background-color: #f4f7fa; /* Light gray background from image */
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.creation-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr; /* Left column is wider */
+  gap: 24px;
+}
+
+/* Stepper */
+.stepper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 15px;
+}
+
+.step { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 0.85rem; color: #64748b; font-weight: 600;}
+.step.active { color: #0ea5e9; }
+.step-circle { width: 32px; height: 32px; border-radius: 50%; background: #0ea5e9; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.step-circle.inactive { background: #e2e8f0; color: #94a3b8; }
+.step-line { height: 2px; width: 100px; background: #e2e8f0; margin-bottom: 20px;}
+
+/* Cards */
+.form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.form-card h3 { margin-bottom: 20px; font-size: 1.2rem; color: #1e293b; }
+
+/* Form Inputs */
+.input-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; width: 100%; }
+.input-group label { font-size: 0.8rem; font-weight: 600; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; }
+.input-group input {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  outline: none;
+  font-family: inherit;
+}
+.input-group input:focus { border-color: #0ea5e9; }
+.form-row { display: flex; gap: 16px; }
+
+/* Upload Area */
+.upload-area {
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f8fafc;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.upload-area:hover { background-color: #f1f5f9; }
+.upload-icon { font-size: 2rem; margin-bottom: 10px; }
+.upload-area h4 { font-size: 1rem; color: #1e293b; margin-bottom: 5px; }
+.upload-area p { font-size: 0.85rem; color: #64748b; }
+
+/* Right Column: Ticket Setup */
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.add-btn { background: none; border: none; color: #0ea5e9; font-weight: bold; cursor: pointer; }
+
+.ticket-box {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.ticket-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+.ticket-top h4 { font-size: 1rem; color: #1e293b; }
+.ticket-top p { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
+
+.revenue-summary { display: flex; justify-content: space-between; align-items: center; margin: 24px 0 16px 0; font-size: 0.9rem; color: #64748b;}
+.revenue-summary strong { font-size: 1.2rem; color: #1e293b; }
+
+.continue-btn {
+  width: 100%;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.disclaimer { text-align: center; font-size: 0.75rem; color: #94a3b8; margin-top: 12px; }
+
+/* CSS Toggle Switch */
+.switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; }
+input:checked + .slider { background-color: #0ea5e9; }
+input:checked + .slider:before { transform: translateX(20px); }
+.slider.round { border-radius: 24px; }
+.slider.round:before { border-radius: 50%; }
+
+/* Responsive rule for smaller screens */
+@media (max-width: 900px) {
+  .creation-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="event-creation-wrapper">
+  
+  <div class="stepper-container">
+    <div class="step active">
+      <div class="step-circle">1</div>
+      <span>Basic Info</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-circle inactive">2</div>
+      <span>Tickets</span>
+    </div>
+    <div class="step-line"></div>
+    <div class="step">
+      <div class="step-circle inactive">3</div>
+      <span>Publish</span>
+    </div>
+  </div>
+
+  <div class="creation-grid">
+    
+    <div class="left-col">
+      
+      <div class="form-card">
+        <h3>Event Details</h3>
+        
+        <div class="input-group">
+          <label>Event Title</label>
+          <input type="text" placeholder="e.g. Neon Nights Music Festival">
+        </div>
+
+        <div class="form-row">
+          <div class="input-group">
+            <label>Date</label>
+            <input type="date">
+          </div>
+          <div class="input-group">
+            <label>Time</label>
+            <input type="time">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Location</label>
+          <input type="text" placeholder="Venue name or address">
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3>Event Banner</h3>
+        <div class="upload-area">
+          <div class="upload-icon">☁️</div>
+          <h4>Click to upload or drag and drop</h4>
+          <p>PNG, JPG, or WEBP (Max 10MB). Recommended 1200x600px</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right-col">
+      
+      <div class="form-card ticket-card">
+        <div class="card-header">
+          <h3>Ticket Setup</h3>
+          <button class="add-btn">+ Add Category</button>
+        </div>
+
+        <div class="ticket-box">
+          <div class="ticket-top">
+            <div>
+              <h4>General Admission</h4>
+              <p>Standard entry access</p>
+            </div>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="form-row">
+            <div class="input-group">
+              <label>PRICE</label>
+              <input type="text" value="$ 49">
+            </div>
+            <div class="input-group">
+              <label>QUANTITY</label>
+              <input type="number" value="500">
+            </div>
+          </div>
+        </div>
+
+        <div class="revenue-summary">
+          <span>Potential Revenue</span>
+          <strong>$37,400.00</strong>
+        </div>
+        <button class="continue-btn">Continue to Tickets →</button>
+        <p class="disclaimer">You can change these details later in settings.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <script>// Function to handle switching any set of tabs
+function setupTabs(buttonClass, pageClass, attributeName) {
+  const buttons = document.querySelectorAll(`.${buttonClass}`);
+  const pages = document.querySelectorAll(`.${pageClass}`);
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute(attributeName);
+
+      // Reset all buttons and pages in this group
+      buttons.forEach(btn => btn.classList.remove('active'));
+      pages.forEach(pg => pg.classList.remove('active'));
+
+      // Activate clicked button and target page
+      button.classList.add('active');
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+}
+
+// Initialize Main Tabs
+setupTabs('nav-btn', 'main-page', 'data-target');
+
+// Initialize Nested Sub-Tabs
+setupTabs('sub-btn', 'sub-page', 'data-sub');
+</script>
+
+<script>
+  //loading
+  
+  const loader = document.getElementById('loader-overlay');
+
+function setupTabs(buttonClass, pageClass, attributeName) {
+  const buttons = document.querySelectorAll(`.${buttonClass}`);
+  const pages = document.querySelectorAll(`.${pageClass}`);
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      // 1. Show the loader
+      loader.classList.remove('loader-hidden');
+
+      // 2. Set a small timeout to simulate loading
+      setTimeout(() => {
+        const targetId = button.getAttribute(attributeName);
+
+        // Reset all buttons and pages
+        buttons.forEach(btn => btn.classList.remove('active'));
+        pages.forEach(pg => pg.classList.remove('active'));
+
+        // Activate new content
+        button.classList.add('active');
+        document.getElementById(targetId).classList.add('active');
+
+        // 3. Hide the loader after content is switched
+        loader.classList.add('loader-hidden');
+      }, 500); // 500ms = 0.5 seconds
+    });
+  });
+}
+
+// Initialize both menus
+setupTabs('nav-btn', 'main-page', 'data-target');
+setupTabs('sub-btn', 'sub-page', 'data-sub');
+
+</script>
+
+
+</body>
+</html>
