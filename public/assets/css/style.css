@@ -750,7 +750,6 @@ header .search a{
 }
 
 .paid-card, .free-card{
-    border: #001f3f solid 1px;
     width: 150px;
     min-width: 150px;
     height: auto;
@@ -1088,6 +1087,374 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+/* step 2 specific layout */
+.ticket-header-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.ticket-header-area h2{
+    font-size: 1.8rem;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+.ticket-header-area p{
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.ticket-management-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    /* border: #001f3f solid 1px; */
+}
+
+ /* left column ticket cards */
+
+ .section-heading{
+    margin: 20px 0 15px 0;
+ }
+ .section-heading h3{
+    font-size: 1.2rem; font-weight: 600;
+    color: #333;
+    align-items: center;
+ }
+.ticket-tier-card{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+}
+
+.tier-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tier-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tier-icon {
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #b4cbef;
+}
+
+.tier-title-group h4{
+    font-size: 1.1rem;
+}
+.tier-title-group p{
+    font-size: 0.85rem; 
+    color: #94a3b8;
+    margin-top: 3px;
+}
+.tier-stats{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-box span{
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 700;
+}
+
+.stat-box strong{
+    font-size: 1rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.green-switch input:checked + .slider {
+    background-color: #22c55e;
+}
+.card-divider {
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+.tier-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.tier-setting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tier-setting span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #94a3b8;
+}
+.setting-value {
+    font-size: 0.9rem;
+    color: #475569;
+    font-weight: 500;
+}
+.tier-actions button {
+    background: none; border: none; font-size: 1.2rem;
+    margin-left: 10px;
+}
+ /* promo section */
+
+ .promo-heading{
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+  .promo-heading a{
+    color: #3b71ca;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+.promo-inputs{
+    display: flex; gap: 10px;
+    margin-bottom: 20px;
+}
+.promo-inputs input{
+    flex: 1; padding: 12px;
+    border: 1px solid;border-radius: 8px;
+}
+.btn-dark {
+    background: #0f172a;font-weight: 600;
+}
+.active-promo{
+    border-radius: 8px;
+    background-color: #cbd5e1;
+    border: none;
+    width: 50vh;
+
+}
+.active-promo .promo-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-right: 15px;
+    color: #334155;
+    
+}
+.active-promo .promo-text {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-right: 20px;
+}
+.active-promo .close-promo {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
+
+/* Right column: summary card */
+
+.ticket-right{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
+.ticket-right .summary-card h3 {
+    font-size: 1.2rem;
+    color: #1e293b;
+    margin-bottom: 25px;
+}
+
+.summary-block {
+    margin-bottom: 25px;
+}
+
+.summary-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a394;
+    margin-bottom: 8px;
+}
+
+.summary-block strong {
+    font-size: 0.95rem;
+    color: #1e293b;
+}
+
+.revenue-total {
+    font-size: 2rem;
+    color: #1e293b;
+}
+
+.revenue-total span {
+    font-size: 1rem;
+    color: #94a394;
+    font-weight: 600;
+}
+
+.revenue-breakdown {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.breakdown-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+.breakdown-line span:last-child{
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    background: #e0f2fe;
+}
+.progress-bar-fill{
+    width: 83%;
+    background: #38bdf8;
+    height: 100%;
+    border-radius: 5px;
+}
+.progress-text{
+    font-size: 0.8rem;
+    color: #94a394;
+    text-align: center;
+}
+
+/* button  */
+
+.btn-cyan{
+    border: none;
+    padding: 12px 20px;
+    font-weight: 600;
+}
+.full-width-btn {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+.btn-outline {
+    background: #fff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.secure-footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.btn-back {
+    margin-top: 15px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+}
+
+.publish-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.publish-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.publish-card i {
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.publish-card h3{
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin: 0;
+}
+
+
+.publish-card span {
+    font-size: 1.2rem;
+    color: #38bdf8;
+}
+
+.event-preview-snippet .image {
+    width: 100px;
+    height: 70px;
+    background: #cbd5e1;
+    border-radius: 6px;
+}
+
+.event-preview-snippet {
+    display : flex;
+    gap: 15px;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 25px;
+}
+.snippet-details h4 {
+    font-size: 1rem;
+    color: #1e293b;
+    margin-bottom: 50px;
+}
+.snippet-details p {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+.snippet-details span{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #38bdf8;
+}
+
+
 
 
 

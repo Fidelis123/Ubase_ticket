@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
-    <link rel="stylesheet" href="./public/assets/css/style.css">
-    <link rel="stylesheet" href="./public/assets/css/reponsive.css">
+        <link rel="stylesheet" href="output.css">
+        <link rel="stylesheet" href="./public/assets/css/style.css">
+        <link rel="stylesheet" href="./public/assets/css/reponsive.css">
 </head>
 <body>
     <header class="logo flex" id="header"></header>
@@ -20,7 +21,7 @@
         <button class="sub-btn" data-sub="sub-5">Past event <i><img src="./public/assets/image/icons/past.png" alt=""></i></a></button>
     </nav>
 
-    <div class="sub-content">
+    <div class="sub-content"> 
 
 
         <div id="sub-1" class="sub-page active">
@@ -50,25 +51,20 @@
                 </div>
 
             
-
-                <div class="creation-grid">
-                
+                    <div id="step-content-1" class="step-section active">
+            <div class="creation-grid">
                 <div class="left-col">
-
                     <div class="create-form-card">
                         <h3>Event Details</h3>
-
                         <div class="create-input-group">
                             <label for="event-name">Event Name</label>
                             <input type="text" id="event-name" placeholder="Enter event name">
                         </div>
-
                         <div class="create-form-row">
                             <div class="create-input-group">
                                 <label for="event-date">Event Date</label>
                                 <input type="date" id="event-date">
                             </div>
-
                             <div class="create-input-group">
                                 <label for="event-time">Event Time</label>
                                 <input type="time" id="event-time">
@@ -82,24 +78,21 @@
 
                     <div class="create-form-card">
                         <h3>Event Banner</h3>
-                        <div class="upload-area">
+                        <div class="upload-area" id="drop-zone">
                             <div class="upload-icon">☁️</div>
-                            <h4>Drag and drop your banner here, or <span class="upload-link">browse</span></h4>
-                            <p>PNG, JPG, or WEBP (Max 10MB). Recommended 1200x600px</p>
+                            <h4 id="upload-text">Drag and drop your banner here, or <span class="upload-link">browse</span></h4>
+                            <p id="upload-subtext">PNG, JPG, or WEBP (Max 10MB)</p>
                             <input type="file" id="banner-upload" accept="image/*" style="display: none;">
                         </div>
                     </div>
-
                 </div>
 
                 <div class="right-col">
-
                     <div class="create-form-card ticket-card">
                         <div class="card-header">
                             <h3>Ticket Setup</h3>
                             <button class="add-btn">+ Add Category</button>
                         </div>
-
                         <div class="ticket-box">
                             <div class="ticket-top">
                                 <div>
@@ -113,31 +106,246 @@
                             </div>
                             <div class="create-form-row">
                                 <div class="create-input-group">
-                                    <label for="ticket-price">PRICE</label>
-                                    <input type="text" id="ticket-price" value="$ 49">
+                                    <label>PRICE</label>
+                                    <input type="text" value="$ 49">
                                 </div>
                                 <div class="create-input-group">
-                                    <label for="ticket-quantity">QUANTITY</label>
-                                    <input type="text" id="ticket-quantity" value="100">
+                                    <label>QUANTITY</label>
+                                    <input type="text" value="100">
                                 </div>
                             </div>
                         </div>
-
                         <div class="revenue-summary">
                             <span>Potential Revenue</span>
                             <strong>$37,400.00</strong>
                         </div>
-                        <button class="continue-btn">Continue to Tickets →</button>
-                        <p class="disclaimer">You can change these details later in settings.</p>
+                        <button id="btn-to-step-2" class="continue-btn">Continue to Tickets →</button>
                     </div>
                 </div>
-                    
+            </div>
+        </div>  
+        
+        <section id="step-content-2" class="step-section">
+
+            <div class="ticket-header-area">
+                <div>
+                    <h2>Ticket Management</h2>
+                    <p> Configure your ticket tiers, pricing, and availablity.</p>
+                </div>
+                <button class="btn-cyan">+ Add Category</button>
+            </div>
+
+            <div class="ticket-management-grid">
+                <div class="ticket-left">
+
+                    <div class="section-heading">
+                        <h3>🎟️ Ticket Categories</h3>
+                    </div>
+
+                    <div class="ticket-tier-card">
+                        <div class="tier-top">
+                            <div class="tier-title-group">
+                                <div class="tier-icon">🎫</div>
+                                <div> 
+                                    <h4>Early Bird</h4>
+                                    <p>First 100 registrations</p>
+                                </div>
+                            </div>
+
+                            <div class="tier-stats">
+                                <div class="stat-box"><span>PRICE: </span><strong>$49.00</strong></div>
+                                <div class="stat-box"><span>AVAILABLE: </span><strong>75/100</strong></div>
+                                <div class="stat-box">
+                                    <span>STATUS</span>
+                                    <label class="switch green-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="card-divider">
+                        <div class="tier-bottom">
+                            <div class="tier-setting">
+                                <span>SALES PERIOD</span>
+                                <div class="setting-value">📅 Oct 12 - Nov 05</div>
+                            </div>
+                            <div class="tier-setting">
+                                <span>ORDER LIMIT</span>
+                                <div class="setting-value">👥 Max 5 per order</div>
+                            </div>
+                            <div class="tier-actions">
+                                <button class="edit-btn">⚙️</button>
+                                <button class="delete-btn">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ticket-tier-card">
+                        <div class="tier-top">
+                            <div class="tier-title-group">
+                                <div class="tier-icon">🎫</div>
+                                <div> 
+                                    <h4>Early Bird</h4>
+                                    <p>First 100 registrations</p>
+                                </div>
+                            </div>
+
+                            <div class="tier-stats">
+                                <div class="stat-box"><span>PRICE: </span><strong>$49.00</strong></div>
+                                <div class="stat-box"><span>AVAILABLE: </span><strong>75/100</strong></div>
+                                <div class="stat-box">
+                                    <span>STATUS</span>
+                                    <label class="switch green-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="card-divider">
+                        <div class="tier-bottom">
+                            <div class="tier-setting">
+                                <span>SALES PERIOD</span>
+                                <div class="setting-value">📅 Oct 12 - Nov 05</div>
+                            </div>
+                            <div class="tier-setting">
+                                <span>ORDER LIMIT</span>
+                                <div class="setting-value">👥 Max 5 per order</div>
+                            </div>
+                            <div class="tier-actions">
+                                <button class="edit-btn">⚙️</button>
+                                <button class="delete-btn">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-heading promo-heading">
+                        <h3>🏷️ promo codes</h3>
+                        <a href="#">View All COdes</a>
+                    </div>
+
+                    <div class="promo-inputs">
+                        <input type="text" placeholder="Enter code (e.g. Udp2026)">
+                        <input type="text" placeholder="Discount %">
+                        <button class="btn-dark">Create code</button>
+                    </div>
+
+                    <div class="active-promo">
+                        <span class="promo-badge">EARLYBIRD20</span>
+                        <span class="promo-text">20% off • Used 12 times</span>
+                        <button class="close-promo">x</button>
+                    </div>
+
+                </div>
+
+                <div class="ticket-right">
+                    <div class="summary-card">
+                        <h3>Summay</h3>
+                    </div>
+
+                    <div class="summary-block">
+                        <span class="summary-label">EVENT DATE</span>
+                        <strong>📅 December 15,2025</strong>
+                    </div>
+
+                    <div class="summary-block">
+                        <span class="summary-label">Total Potential Revenue</span>
+                        <h2 class="revenue-total">$49,400 <span>USD</span></h2>
+
+                        <div class="revenue-breakdown">
+                            <div class="breakdown-line"><span>Early Bird(100)</span><span>$4,900</span></div>
+                            <div class="breakdown-line"><span>General (500)</span><span>$44,900</span></div>
+                        </div>
+                    </div>
+
+                    <div class="summary-block">
+                        <span class="summary-label">CAPACITY</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                        <p class="progress-text">600 total tickets across 2 tiers</p>
+                    </div>
+
+                    <button id="btn-to-step-3" class="btn-cyan full-width-btn">CONTINUE TO PUBLISH</button>
+                    <button  class="btn-outline full-width-btn">save as draft</button>
+                    <div class="secure-footer">
+                        🔐SSL ENCRYPTED PAYMENT
+                    </div>
+
+                    <button class="btn-back" onclick="gotostep(1)">← Back to Basic Info</button>
+
+
                 </div>
             </div>
-        </div>        
-            
+        </section>
 
+        <section id="step-content-3" class="step-section">
+            <div class="publish-grid">
+                <div class="publish-left">
 
+                    <div class="publish-card">
+                        <i>
+                            <span>👁️</span>
+                            <h3>Final Review $ privacy</h3>
+                        </i>
+
+                        <div class="event-preview-snippet">
+                            <div class="image"></div>
+                            <div class="snippet-details">
+                                <h4>Neon Night Music Festival</h4>
+                                <p>Dec 15,2026 • 8:00 PM • Downtown Arena </p>
+                                <span>🎫 Ticket setup: 2 Active Tiers</span>
+                            </div>
+                        </div>
+
+                        <label for="" class="privacy-option active-option">
+                            <input type="radio" name="event-privacy" checked>
+                            <div class="option-text">
+                                <strong>Public Event</strong>
+                                <p>Listed on our homepage and searchable by anyone. Recommended for maximum reach.</p>
+                            </div>
+                        </label>
+
+                        <label for="" class="privacy-option">
+                            <input type="radio" name="event-privacy">
+                            <div class="option-text">
+                                <strong>Private Event</strong>
+                                <p>Only accessible via direct link. won't appear in public searches or listings.</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="publish-card">
+                        <div class="card-header-icon">
+                            <span>📡</span>
+                            <h3>Publishing Status</h3>
+                        </div>
+
+                        <div class="ready-status-box">
+                            <div class="check-circle">✓</div>
+                            <h3>Ready to Go!</h3>
+                            <p>All required information has been provided. you are ready to lauch your event to the world.</p>
+                        </div>
+
+                        <div class="enable-sales-row">
+                            <div class="sales-text">
+                                <strong>Enable Sales Immediately</strong>
+                                <p>Tickets will be available for purchase as soon as you publish.</p>
+                            </div>
+                            <label class="switch blue-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </div>
 </main>
    

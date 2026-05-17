@@ -16,8 +16,10 @@ header.innerHTML = `
         </nav>
 
         <div class="search" id="search">
-           <button type="submit" class="btn"><a href="./app/pages/getstarted.php">Get started</a></button>
+           <button type="submit" class="btn"><a href="./app/pages/getstarted.html">Get started</a></button>
+           
         </div>
+        
 `;
 
 // select all nav links 

@@ -336,6 +336,561 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 
 
+<!-- step 2 content -->
+
+
+<div id="step-content-2" class="step-section">
+    
+    <div class="ticket-header-area">
+        <div>
+            <h2>Ticket Management</h2>
+            <p>Configure your ticket tiers, pricing, and availability.</p>
+        </div>
+        <button class="btn-cyan">+ Add Category</button>
+    </div>
+
+    <div class="ticket-management-grid">
+        <div class="ticket-left">
+            
+            <div class="section-heading">
+                <h3>🎟️ Ticket Categories</h3>
+            </div>
+
+            <div class="ticket-tier-card">
+                <div class="tier-top">
+                    <div class="tier-title-group">
+                        <div class="tier-icon">🎫</div>
+                        <div>
+                            <h4>Early Bird</h4>
+                            <p>First 100 registrations</p>
+                        </div>
+                    </div>
+                    <div class="tier-stats">
+                        <div class="stat-box"><span>PRICE</span><strong>$49.00</strong></div>
+                        <div class="stat-box"><span>AVAILABLE</span><strong>75/100</strong></div>
+                        <div class="stat-box">
+                            <span>STATUS</span>
+                            <label class="switch green-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr class="card-divider">
+                <div class="tier-bottom">
+                    <div class="tier-setting">
+                        <span>SALES PERIOD</span>
+                        <div class="setting-value">📅 Oct 12 - Nov 05</div>
+                    </div>
+                    <div class="tier-setting">
+                        <span>ORDER LIMIT</span>
+                        <div class="setting-value">👥 Max 4 per order</div>
+                    </div>
+                    <div class="tier-actions">
+                        <button title="Settings">⚙️</button>
+                        <button title="Delete">🗑️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ticket-tier-card">
+                <div class="tier-top">
+                    <div class="tier-title-group">
+                        <div class="tier-icon">🎟️</div>
+                        <div>
+                            <h4>General Admission</h4>
+                            <p>Standard entry to the event</p>
+                        </div>
+                    </div>
+                    <div class="tier-stats">
+                        <div class="stat-box"><span>PRICE</span><strong>$89.00</strong></div>
+                        <div class="stat-box"><span>AVAILABLE</span><strong>500/500</strong></div>
+                        <div class="stat-box">
+                            <span>STATUS</span>
+                            <label class="switch green-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr class="card-divider">
+                <div class="tier-bottom">
+                    <div class="tier-setting">
+                        <span>SALES PERIOD</span>
+                        <div class="setting-value">📅 Nov 06 - Dec 20</div>
+                    </div>
+                    <div class="tier-setting">
+                        <span>ORDER LIMIT</span>
+                        <div class="setting-value">👥 Max 10 per order</div>
+                    </div>
+                    <div class="tier-actions">
+                        <button title="Settings">⚙️</button>
+                        <button title="Delete">🗑️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-heading promo-heading">
+                <h3>🏷️ Promo Codes</h3>
+                <a href="#">View All Codes</a>
+            </div>
+            
+            <div class="promo-inputs">
+                <input type="text" placeholder="Enter code (e.g. VIP2024)">
+                <input type="text" placeholder="Discount %">
+                <button class="btn-dark">Create Code</button>
+            </div>
+
+            <div class="active-promo">
+                <span class="promo-badge">EARLYBIRD20</span>
+                <span class="promo-text">20% Off • Used 12 times</span>
+                <button class="close-promo">×</button>
+            </div>
+
+        </div>
+
+        <div class="ticket-right">
+            <div class="summary-card">
+                <h3>Summary</h3>
+                
+                <div class="summary-block">
+                    <span class="summary-label">EVENT DATE</span>
+                    <strong class="summary-val">📅 December 15, 2024</strong>
+                </div>
+
+                <div class="summary-block">
+                    <span class="summary-label">TOTAL POTENTIAL REVENUE</span>
+                    <h2 class="revenue-total">$49,400 <span>USD</span></h2>
+                    
+                    <div class="revenue-breakdown">
+                        <div class="breakdown-line"><span>Early Bird (100)</span><span>$4,900</span></div>
+                        <div class="breakdown-line"><span>General (500)</span><span>$44,500</span></div>
+                    </div>
+                </div>
+
+                <div class="summary-block">
+                    <span class="summary-label">CAPACITY HEATMAP</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <p class="progress-text">600 total tickets across 2 tiers</p>
+                </div>
+
+                <button id="btn-to-step-3" class="btn-cyan full-width-btn">CONTINUE TO PUBLISH</button>
+                <button class="btn-outline full-width-btn">Save as Draft</button>
+                <div class="secure-footer">
+                    🔒 SSL ENCRYPTED PAYMENT
+                </div>
+                
+                <button class="btn-back" onclick="goToStep(1)">← Back to Basic Info</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+/* --- Step 2 specific layout --- */
+.ticket-header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.ticket-header-area h2 { font-size: 1.8rem; color: #1e293b; margin-bottom: 5px; }
+.ticket-header-area p { color: #64748b; font-size: 0.95rem; }
+
+.ticket-management-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Left col is twice as wide as right col */
+    gap: 30px;
+}
+
+/* --- Left Column: Ticket Cards --- */
+.section-heading {
+    margin: 20px 0 15px 0;
+    color: #334155;
+}
+.section-heading h3 { display: flex; align-items: center; gap: 8px; font-size: 1.2rem; }
+.promo-heading { display: flex; justify-content: space-between; align-items: center; }
+.promo-heading a { color: #38bdf8; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+
+.ticket-tier-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.tier-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tier-title-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.tier-icon {
+    font-size: 1.5rem;
+    background: #e0f2fe;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.tier-title-group h4 { font-size: 1.1rem; color: #1e293b; }
+.tier-title-group p { font-size: 0.85rem; color: #94a3b8; margin-top: 3px; }
+
+.tier-stats {
+    display: flex;
+    gap: 30px;
+}
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.stat-box span { font-size: 0.75rem; font-weight: 700; color: #94a3b8; }
+.stat-box strong { font-size: 1.1rem; color: #0ea5e9; } /* Blue price color */
+
+/* Green Switch Toggle override */
+.green-switch input:checked + .slider { background-color: #22c55e; }
+
+.card-divider { border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0; }
+
+.tier-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tier-setting { display: flex; flex-direction: column; gap: 5px; }
+.tier-setting span { font-size: 0.75rem; font-weight: 700; color: #94a3b8; }
+.setting-value { font-size: 0.9rem; color: #475569; font-weight: 500; }
+.tier-actions button {
+    background: none; border: none; font-size: 1.2rem; color: #cbd5e1;
+    cursor: pointer; margin-left: 10px;
+}
+
+/* Promo section inputs */
+.promo-inputs { display: flex; gap: 10px; margin-bottom: 20px; }
+.promo-inputs input { flex: 1; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; outline: none;}
+.btn-dark { background: #0f172a; color: white; border: none; padding: 0 25px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+.active-promo {
+    display: flex; align-items: center; background: #f8fafc; padding: 10px 15px; border-radius: 8px; border: 1px solid #e2e8f0; width: fit-content;
+}
+.promo-badge { background: #e2e8f0; padding: 4px 8px; border-radius: 4px; font-weight: 700; font-size: 0.8rem; margin-right: 15px; color: #334155; }
+.promo-text { font-size: 0.9rem; color: #64748b; margin-right: 20px; }
+.close-promo { background: none; border: none; font-size: 1.2rem; color: #94a3b8; cursor: pointer; }
+
+
+/* --- Right Column: Summary Card --- */
+.summary-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+.summary-card h3 { font-size: 1.2rem; color: #1e293b; margin-bottom: 25px; }
+
+.summary-block { margin-bottom: 25px; }
+.summary-label { display: block; font-size: 0.75rem; font-weight: 700; color: #94a3b8; margin-bottom: 8px; }
+.summary-val { font-size: 0.95rem; color: #1e293b; }
+
+.revenue-total { font-size: 2rem; color: #1e293b; }
+.revenue-total span { font-size: 1rem; color: #94a3b8; font-weight: 600; }
+
+.revenue-breakdown { margin-top: 15px; display: flex; flex-direction: column; gap: 8px; }
+.breakdown-line { display: flex; justify-content: space-between; font-size: 0.85rem; color: #64748b; }
+.breakdown-line span:last-child { font-weight: 700; color: #1e293b; }
+
+.progress-bar-container { width: 100%; background: #e0f2fe; height: 10px; border-radius: 5px; margin-bottom: 8px; }
+.progress-bar-fill { width: 83%; background: #38bdf8; height: 100%; border-radius: 5px; }
+.progress-text { font-size: 0.8rem; color: #94a3b8; text-align: center; }
+
+/* Buttons & Footer */
+.btn-cyan { background: #38bdf8; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+.full-width-btn { width: 100%; margin-bottom: 10px; font-size: 1rem; }
+.btn-outline { background: white; color: #1e293b; border: 1px solid #e2e8f0; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+.secure-footer { text-align: center; font-size: 0.75rem; color: #94a3b8; font-weight: 600; margin-top: 15px; }
+</style>
+
+
+<!-- step 3 -->
+
+<div id="step-content-3" class="step-section">
+    
+    <div class="publish-grid">
+        <div class="publish-left">
+            
+            <div class="publish-card">
+                <div class="card-header-icon">
+                    <span class="icon-blue">👁️</span> 
+                    <h3>Final Review & Privacy</h3>
+                </div>
+
+                <div class="event-preview-snippet">
+                    <div class="snippet-image"></div>
+                    <div class="snippet-details">
+                        <h4>Neon Nights Music Festival</h4>
+                        <p>Dec 15, 2024 • 8:00 PM • Downtown Arena</p>
+                        <span class="ticket-link">🎫 Ticket Setup: 2 Active Tiers</span>
+                    </div>
+                </div>
+
+                <label class="privacy-option active-option">
+                    <input type="radio" name="event-privacy" checked>
+                    <div class="option-text">
+                        <strong>Public Event</strong>
+                        <p>Listed on our homepage and searchable by anyone. Recommended for maximum reach.</p>
+                    </div>
+                </label>
+
+                <label class="privacy-option">
+                    <input type="radio" name="event-privacy">
+                    <div class="option-text">
+                        <strong>Private Event</strong>
+                        <p>Only accessible via direct link. Won't appear in public searches or listings.</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="publish-card">
+                <div class="card-header-icon">
+                    <span class="icon-blue">📡</span> 
+                    <h3>Publishing Status</h3>
+                </div>
+
+                <div class="ready-status-box">
+                    <div class="check-circle">✓</div>
+                    <h3>Ready to Go!</h3>
+                    <p>All required information has been provided. You are ready to launch your event to the world.</p>
+                </div>
+
+                <div class="enable-sales-row">
+                    <div class="sales-text">
+                        <strong>Enable Sales Immediately</strong>
+                        <p>Tickets will be available for purchase as soon as you publish.</p>
+                    </div>
+                    <label class="switch blue-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="publish-right">
+            <div class="summary-card">
+                <h3>Summary</h3>
+
+                <div class="summary-line">
+                    <span>Total Capacity</span>
+                    <strong>600 Tickets</strong>
+                </div>
+                <div class="summary-line">
+                    <span>Potential Revenue</span>
+                    <strong class="text-green">$37,400.00</strong>
+                </div>
+
+                <p class="fee-text">Processing fees apply. Est. Net: $35,904.00</p>
+
+                <button class="btn-dark-large">🚀 Go Live & Publish Event</button>
+
+                <button class="go-back-link" onclick="goToStep(2)">Go Back</button>
+
+                <div class="publish-disclaimer">
+                    <span class="info-icon">ℹ️</span>
+                    <p>By publishing this event, you agree to EventPro's Terms of Service and Privacy Policy. Your event will be live immediately unless scheduled otherwise.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+  /* --- Step 3 Specific Layout --- */
+.publish-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.publish-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.card-header-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.card-header-icon h3 { font-size: 1.1rem; color: #1e293b; margin: 0; }
+.icon-blue { font-size: 1.2rem; color: #38bdf8; }
+
+/* Event Snippet Preview */
+.event-preview-snippet {
+    display: flex;
+    gap: 15px;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 25px;
+}
+.snippet-image {
+    width: 100px;
+    height: 70px;
+    background: #cbd5e1;
+    border-radius: 6px;
+}
+.snippet-details h4 { font-size: 1rem; color: #1e293b; margin-bottom: 5px; }
+.snippet-details p { font-size: 0.8rem; color: #64748b; margin-bottom: 8px; }
+.ticket-link { font-size: 0.8rem; font-weight: 600; color: #38bdf8; }
+
+/* Radio Options (Public/Private) */
+.privacy-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.privacy-option input[type="radio"] {
+    margin-top: 4px;
+    accent-color: #38bdf8;
+    transform: scale(1.2);
+}
+.option-text strong { display: block; font-size: 1rem; color: #1e293b; margin-bottom: 4px; }
+.option-text p { font-size: 0.85rem; color: #64748b; margin: 0; }
+
+/* Magic CSS to highlight the card when the radio inside is checked */
+.privacy-option:has(input[type="radio"]:checked) {
+    border-color: #38bdf8;
+    background-color: #f0f9ff;
+}
+
+/* Status Box */
+.ready-status-box {
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.check-circle {
+    width: 40px;
+    height: 40px;
+    background: #dcfce7;
+    color: #22c55e;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 auto 15px auto;
+}
+.ready-status-box h3 { font-size: 1.2rem; color: #1e293b; margin-bottom: 8px; }
+.ready-status-box p { font-size: 0.9rem; color: #64748b; max-width: 80%; margin: 0 auto; line-height: 1.5; }
+
+/* Enable Sales Row */
+.enable-sales-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+}
+.sales-text strong { font-size: 0.95rem; color: #1e293b; display: block; margin-bottom: 3px;}
+.sales-text p { font-size: 0.8rem; color: #64748b; margin: 0;}
+
+/* Right Column Summary adjustments */
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #64748b;
+}
+.summary-line strong { color: #1e293b; font-size: 1.05rem; }
+.text-green { color: #22c55e !important; }
+
+.fee-text { font-size: 0.8rem; color: #94a3b8; font-style: italic; margin-bottom: 25px; text-align: right; }
+
+.btn-dark-large {
+    width: 100%;
+    background: #0f172a;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background 0.2s;
+}
+.btn-dark-large:hover { background: #1e293b; }
+
+.go-back-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+.go-back-link:hover { color: #1e293b; text-decoration: underline; }
+
+.publish-disclaimer {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+.info-icon { font-size: 1rem; color: #94a3b8; }
+.publish-disclaimer p { font-size: 0.75rem; color: #94a3b8; line-height: 1.5; margin: 0; }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>// Function to handle switching any set of tabs
 function setupTabs(buttonClass, pageClass, attributeName) {
